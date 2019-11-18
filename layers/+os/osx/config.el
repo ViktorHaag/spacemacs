@@ -9,9 +9,13 @@
 ;;
 ;;; License: GPLv3
 
-(defvar osx-use-option-as-meta t
-  "If non nil the option key is mapped to meta. Set to `nil` if you need the
+(defvar osx-use-option-as-super t
+  "If non nil the option key is mapped to super. Set to `nil` if you need the
   option key to type common characters.")
+
+(defvar osx-use-command-as-meta t
+  "if non nil the command key is mapped to meta. Set to `nil` if
+  you need the command key mapped to super instead.")
 
 (defvar osx-use-dictionary-app t
   "If non nil use osx dictionary app instead of wordnet")
