@@ -16,6 +16,9 @@
       (add-to-load-path dir)))
 
 ;; paths
+(defconst user-home-directory
+  (expand-file-name "~/")
+  "User home directory (~/).")
 (defvar spacemacs-start-directory
   user-emacs-directory
   "Spacemacs start directory.")
@@ -41,12 +44,6 @@
 (defconst spacemacs-purple-heart-png
   (expand-file-name (concat spacemacs-banner-directory "img/heart.png"))
   "Purple heart emoji.")
-(defconst spacemacs-cache-directory
-  (expand-file-name (concat user-emacs-directory ".cache/"))
-  "Spacemacs storage area for persistent files")
-(defconst spacemacs-auto-save-directory
-  (expand-file-name (concat spacemacs-cache-directory "auto-save/"))
-  "Spacemacs auto-save directory")
 (defconst spacemacs-docs-directory
   (expand-file-name (concat spacemacs-start-directory "doc/"))
   "Spacemacs documentation directory.")
@@ -60,9 +57,12 @@
   (expand-file-name (concat spacemacs-start-directory "tests/"))
   "Spacemacs tests directory.")
 
-(defconst user-home-directory
-  (expand-file-name "~/")
-  "User home directory (~/).")
+(defconst spacemacs-cache-directory
+  (expand-file-name (concat user-home-directory ".spacemacs.cache/"))
+  "Spacemacs storage area for persistent files")
+(defconst spacemacs-auto-save-directory
+  (expand-file-name (concat spacemacs-cache-directory "auto-save/"))
+  "Spacemacs auto-save directory")
 (defconst pcache-directory
   (concat spacemacs-cache-directory "pcache/"))
 (unless (file-exists-p spacemacs-cache-directory)
