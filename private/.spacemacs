@@ -36,7 +36,7 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     javascript
+     json-mode ;; personal
      ibuffer-personal
      ivy
      ;; auto-completion
@@ -44,7 +44,6 @@ values."
      emacs-lisp
      git
      local-functions ;; personal
-     lorem-ipsum ;; personal
      macos ;; personal replacement for the osx distributed layer
      markdown
      ;; org
@@ -331,10 +330,6 @@ you should place your code here."
 
   ;;; editorconfig on by default
   (editorconfig-mode t)
-
-  ;;; JSON mode (loaded by javascript layer)
-  (add-to-list 'auto-mode-alist '("\\.jsonld$" . json-mode))
-  (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 
   ;;; misc Emacs settings
   (setq-default track-eol t)
