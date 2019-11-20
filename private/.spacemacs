@@ -318,6 +318,8 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (editorconfig-mode t)
   (setq-default track-eol t)
+  (when window-system
+    (setq frame-title-format '(buffer-file-name "%f" ("%b"))))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
