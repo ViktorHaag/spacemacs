@@ -42,7 +42,7 @@ values."
      ;; better-defaults
      emacs-lisp
      git
-     macos
+     macos ;; personal replacement for the osx distributed layer
      markdown
      ;; org
      python-personal
