@@ -321,6 +321,9 @@ you should place your code here."
   ;; Add .css_t as a CSS recognized suffix to account for Sphinx doc project conventions
   (add-to-list 'auto-mode-alist '("\\.css_t$" . css-mode))
 
+  ;;; Text mode
+  (add-hook 'text-mode-hook 'turn-on-auto-fill)
+
   ;;; Desktop settings
   (desktop-save-mode 1)
   (setq desktop-path (quote (expand-file-name "~/.emacs.desktops/")))
@@ -332,6 +335,8 @@ you should place your code here."
   (editorconfig-mode t)
 
   ;;; misc Emacs settings
+  (setq-default tab-width 4)
+  (setq-default c-basic-offset 4)
   (setq-default track-eol t)
   (when window-system
     (setq frame-title-format '(buffer-file-name "%f" ("%b"))))
