@@ -2,6 +2,7 @@ auto-save-list/
 elpa/
 export/
 ac-comphist.dat
+custom.el
 eproject.lst
 .smex-items
 \#*
@@ -46,5 +47,4 @@ python-*-docs-html
 /recentf
 .mc-lists.el
 transient/
-
 /games/
