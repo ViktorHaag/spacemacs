@@ -37,7 +37,6 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      javascript
-     json-mode ;; personal
      ibuffer-personal
      ivy
      ;; auto-completion
@@ -53,7 +52,7 @@ values."
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      ;; spell-checking
-     ;; syntax-checking
+     syntax-checking
      ;; version-control
      yaml
      )
@@ -323,7 +322,10 @@ you should place your code here."
 
   ;;; CSS mode
   ;; Add .css_t as a CSS recognized suffix to account for Sphinx doc project conventions
-  (add-to-list 'auto-mode-alist '("\\.css_t$" . css-mode))
+  (add-to-list 'auto-mode-alist '("\\.css_t\." . css-mode))
+
+  ;;; JSON mode
+  (add-to-list 'auto-mode-alist '("\\.jsonld\\." . json-mode))
 
   ;;; Text mode
   (add-hook 'text-mode-hook 'turn-on-auto-fill)
