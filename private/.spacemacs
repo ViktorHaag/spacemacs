@@ -328,6 +328,14 @@ you should place your code here."
   ;;; JSON mode
   (add-to-list 'auto-mode-alist '("\\.jsonld\\." . json-mode))
 
+  ;;; Markdown mode
+  ;; markdown layer stomps M-l, so put it back, and reassign markdown-demote to M-g as unused
+  (spacemacs|use-package-add-hook markdown
+    :post-config
+    (progn
+      (define-key markdown-mode-map (kbd "M-g" 'markdown-demote))
+      (define-key markdown-mode-map (kbd "M-l" 'downcase-word))))
+
   ;;; Text mode
   (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
