@@ -100,7 +100,7 @@
 
 ;; ~/.emacs.d/.cache
 (defconst spacemacs-cache-directory
-  (concat user-emacs-directory ".cache/")
+  (concat user-home-directory ".cache/")
   "Spacemacs storage area for persistent files.")
 
 ;; ~/.emacs.d/.cache/auto-save
@@ -108,7 +108,7 @@
   (concat spacemacs-cache-directory "auto-save/")
   "Spacemacs auto-save directory.")
 
-
+
 ;;;; Setup cache directories
 
 ;; TODO: Should also catch any IO error such as permission error (Apr 25 2021 Lucius)
@@ -116,7 +116,7 @@
   (make-directory spacemacs-cache-directory))
 
 (setq pcache-directory (concat spacemacs-cache-directory "pcache/"))
-
+
 ;;;; Load Paths
 ;; TODO: Since these functions are not called anywhere, consider to inline them (Apr 27 2021 Lucius)
 
