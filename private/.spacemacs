@@ -512,7 +512,7 @@ before packages are loaded."
   (setq desktop-base-lock-name "desktop.lock")
 
   ;;; editorconfig on by default
-  (editorconfig mode t)
+  (editorconfig-mode t)
 
   ;;; misc Emacs settings
   (setq-default c-basic-offset 4)
