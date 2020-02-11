@@ -48,6 +48,7 @@ This function should only modify configuration layer settings."
      ibuffer-personal
      ivy
      ;; lsp
+     local-functions ;; personal
      ;; markdown
      multiple-cursors
      ;; org
