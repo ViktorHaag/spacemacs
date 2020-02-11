@@ -44,6 +44,7 @@ This function should only modify configuration layer settings."
      git
      helm
      html
+     javascript
      json-mode ;; personal
      ibuffer-personal
      ivy
