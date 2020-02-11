@@ -44,7 +44,7 @@ This function should only modify configuration layer settings."
      git
      helm
      html
-     javascript
+     json-mode ;; personal
      ibuffer-personal
      ivy
      ;; lsp
@@ -496,10 +496,6 @@ before packages are loaded."
 
   ;;; editorconfig on by default
   (editorconfig mode t)
-
-  ;;; JSON mode (loaded by javascript layer)
-  (add-to-list 'auto-mode-alist '("\\.jsonld$" . json-mode))
-  (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 
   ;;; misc Emacs settings
   (setq-default track-eol t)
