@@ -34,6 +34,7 @@ auto-save-list/
 bbdb
 bookmarks
 crown/
+custom.el
 eclipse.jdt.ls
 edts/
 elnode/
