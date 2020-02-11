@@ -57,6 +57,7 @@ This function should only modify configuration layer settings."
           osx-control-as 'control
           osx-function-as nil
           )
+     python-personal
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
