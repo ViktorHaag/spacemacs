@@ -51,6 +51,12 @@ This function should only modify configuration layer settings."
      ;; markdown
      multiple-cursors
      ;; org
+     (osx :variables
+          osx-command-as 'meta
+          osx-option-as 'super
+          osx-control-as 'control
+          osx-function-as nil
+          )
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
