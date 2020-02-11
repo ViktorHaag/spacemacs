@@ -483,9 +483,26 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
-  (editorconfig mode t)
-  (setq-default track-eol t)
+  ;;; CSS mode
+  ;; Add .css_t as a CSS recognized suffix to account for Sphinx doc project conventions
+  (add-to-list 'auto-mode-alist '("\\.css_t$" . css-mode))
 
+  ;;; Desktop settings
+  (desktop-save-mode 1)
+  (setq desktop-path (quote (expand-file-name "~/.emacs.desktops/")))
+  (setq desktop-dirname (expand-file-name "~/.emacs.desktops/"))
+  (setq desktop-base-file-name "desktop")
+  (setq desktop-base-lock-name "desktop.lock")
+
+  ;;; editorconfig on by default
+  (editorconfig mode t)
+
+  ;;; JSON mode (loaded by javascript layer)
+  (add-to-list 'auto-mode-alist '("\\.jsonld$" . json-mode))
+  (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
+
+  ;;; misc Emacs settings
+  (setq-default track-eol t)
   (when window-system
     (setq frame-title-format '(buffer-file-name "%f" ("%b")))
     )
@@ -494,6 +511,7 @@ before packages are loaded."
   (global-set-key (kbd "C-x C-b") 'ibuffer)
   (global-set-key [home] 'beginning-of-buffer)
   (global-set-key [end] 'end-of-buffer)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
