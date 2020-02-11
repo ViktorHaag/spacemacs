@@ -485,6 +485,10 @@ before packages are loaded."
   (editorconfig mode t)
   (setq-default track-eol t)
 
+  (when window-system
+    (setq frame-title-format '(buffer-file-name "%f" ("%b")))
+    )
+
   ;; keybindings
   (global-set-key (kbd "C-x C-b") 'ibuffer)
   (global-set-key [home] 'beginning-of-buffer)
