@@ -15,7 +15,6 @@
 (setq python-personal-packages
   '(
     elpy
-    flycheck
     pip-requirements
     py-autopep8
     py-yapf
@@ -48,8 +47,8 @@
       (setq elpy-rpc-timeout 10))
     ))
 
-(defun python-personal/init-flycheck ()
-  (use-package flycheck))
+(defun python-personal/init-pip-requirements ()
+  (use-package pip-requirements))
 
 (defun python-personal/init-py-autopep8 ()
   (use-package py-autopep8))

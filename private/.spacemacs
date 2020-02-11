@@ -45,7 +45,6 @@ This function should only modify configuration layer settings."
      helm
      html
      javascript
-     json-mode ;; personal
      ibuffer-personal
      ivy
      ;; lsp
@@ -489,6 +488,9 @@ before packages are loaded."
   ;;; CSS mode
   ;; Add .css_t as a CSS recognized suffix to account for Sphinx doc project conventions
   (add-to-list 'auto-mode-alist '("\\.css_t$" . css-mode))
+
+  ;; JSON mode
+  (add-to-list 'auto-mode-alist '("\\.jsonld\\." . json-mode))
 
   ;;; Text mode
   (add-hook 'text-mode-hook 'turn-on-auto-fill)
