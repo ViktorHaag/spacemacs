@@ -481,6 +481,10 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+
+  (editorconfig mode t)
+  (setq-default track-eol t)
+
   ;; keybindings
   (global-set-key (kbd "C-x C-b") 'ibuffer)
   (global-set-key [home] 'beginning-of-buffer)
