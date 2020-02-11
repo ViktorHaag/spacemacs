@@ -276,7 +276,7 @@ It should only modify the values of Spacemacs settings."
    ;; Size (in MB) above which spacemacs will prompt to open the large file
    ;; literally to avoid performance issues. Opening a file literally means that
    ;; no major mode or minor modes are active. (default is 1)
-   dotspacemacs-large-file-size 1
+   dotspacemacs-large-file-size 4
 
    ;; Location where to auto-save files. Possible values are `original' to
    ;; auto-save the file in-place, `cache' to auto-save the file to another
@@ -444,7 +444,7 @@ It should only modify the values of Spacemacs settings."
    ;; `trailing' to delete only the whitespace at end of lines, `changed' to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-whitespace-cleanup 'trailing
 
    ;; Either nil or a number of seconds. If non-nil zone out after the specified
    ;; number of seconds. (default nil)
@@ -504,7 +504,8 @@ before packages are loaded."
   (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
   ;;; Desktop settings
-  (desktop-save-mode 1)
+  (desktop-save-mode)
+  (desktop-read)
   (setq desktop-path (quote (expand-file-name "~/.emacs.desktops/")))
   (setq desktop-dirname (expand-file-name "~/.emacs.desktops/"))
   (setq desktop-base-file-name "desktop")
