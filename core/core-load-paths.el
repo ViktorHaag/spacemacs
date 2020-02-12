@@ -98,12 +98,12 @@
   (concat spacemacs-start-directory "tests/")
   "Spacemacs tests directory.")
 
-;; ~/.emacs.d/.cache
+;; ~/Library/Caches/emacs.spacemacs
 (defconst spacemacs-cache-directory
-  (concat user-home-directory ".cache/")
-  "Spacemacs storage area for persistent files.")
+  (expand-file-name (concat user-home-directory "Library/Caches/emacs.spacemacs/"))
+  "Spacemacs storage area for persistent files")
 
-;; ~/.emacs.d/.cache/auto-save
+;; ~/Library/Caches/emacs.spacemacs/auto-save
 (defconst spacemacs-auto-save-directory
   (concat spacemacs-cache-directory "auto-save/")
   "Spacemacs auto-save directory.")
