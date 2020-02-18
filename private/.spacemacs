@@ -49,7 +49,7 @@ This function should only modify configuration layer settings."
      ivy
      ;; lsp
      local-functions ;; personal
-     ;; markdown
+     markdown
      multiple-cursors
      ;; org
      (osx :variables
