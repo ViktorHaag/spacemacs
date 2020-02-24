@@ -28,7 +28,7 @@
     :init
     (progn
       (setq py-shell-name "python3")
-      (setq python-shell-interpreter "python3"))
+      (setq python-shell-interpreter "/usr/local/bin/python3"))
     ))
 
 
@@ -36,7 +36,7 @@
   (use-package elpy
     :init
     (progn
-      (setq elpy-rpc-python-command "python3")
+      (setq elpy-rpc-python-command "/usr/local/bin/python3")
       (setq elpy-rpc-virtualenv-path 'global)
       (elpy-enable)
       (setq elpy-modules '(elpy-module-company
