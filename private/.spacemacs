@@ -474,7 +474,14 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
           ("melpa" . "melpa.org/packages/")
           ("org" . "orgmode.org/elpa/")
           ("gnu" . "elpa.gnu.org/packages/")))
-  (setq dired-use-ls-dired nil)
+
+  ;; explicitly set gls for instert-directory-program, to get the
+  ;; formatting switches we want
+  (when (spacemacs/system-is-mac)
+    (let ((gls (executable-find "gls")))
+      (when gls
+        (setq insert-directory-program gls
+              dired-listing-switches "-aBhl --color --group-directories-first"))))
   )
 
 (defun dotspacemacs/user-load ()
