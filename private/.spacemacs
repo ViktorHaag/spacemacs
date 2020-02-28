@@ -267,7 +267,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil then the last auto saved layouts are resumed automatically upon
    ;; start. (default nil)
-   dotspacemacs-auto-resume-layouts nil
+   dotspacemacs-auto-resume-layouts t
 
    ;; If non-nil, auto-generate layout name when creating new layouts. Only has
    ;; effect when using the "jump to layout by number" commands. (default nil)
@@ -433,7 +433,7 @@ It should only modify the values of Spacemacs settings."
    ;; %z - mnemonics of buffer, terminal, and keyboard coding systems
    ;; %Z - like %z, but including the end-of-line format
    ;; (default "%I@%S")
-   dotspacemacs-frame-title-format "%I@%S"
+   dotspacemacs-frame-title-format "%f"
 
    ;; Format specification for setting the icon title format
    ;; (default nil - same as frame-title-format)
@@ -516,14 +516,6 @@ before packages are loaded."
   ;;; Text mode
   (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
-  ;;; Desktop settings
-  (desktop-save-mode)
-  (desktop-read)
-  (setq desktop-path (quote (expand-file-name "~/.emacs.desktops/")))
-  (setq desktop-dirname (expand-file-name "~/.emacs.desktops/"))
-  (setq desktop-base-file-name "desktop")
-  (setq desktop-base-lock-name "desktop.lock")
-
   ;;; editorconfig on by default
   (editorconfig-mode t)
 
@@ -531,9 +523,6 @@ before packages are loaded."
   (setq-default c-basic-offset 4)
   (setq-default tab-width 4)
   (setq-default track-eol t)
-  (when window-system
-    (setq frame-title-format '(buffer-file-name "%f" ("%b")))
-    )
 
   ;; keybindings
   (global-set-key (kbd "C-x C-b") 'ibuffer)
