@@ -28,15 +28,15 @@
     :init
     (progn
       (setq py-shell-name "python3")
-      (setq python-shell-interpreter "/usr/local/bin/python3"))
-    ))
+      (setq python-shell-interpreter (expand-file-name "~/.pyenv/shims/python3" ))
+    )))
 
 
 (defun python-personal/init-elpy ()
   (use-package elpy
     :init
     (progn
-      (setq elpy-rpc-python-command "/usr/local/bin/python3")
+      (setq elpy-rpc-python-command (expand-file-name "~/.pyenv/shims/python3"))
       (setq elpy-rpc-virtualenv-path 'global)
       (elpy-enable)
       (setq elpy-modules '(elpy-module-company
