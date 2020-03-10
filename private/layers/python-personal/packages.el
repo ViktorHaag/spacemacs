@@ -16,8 +16,6 @@
   '(
     elpy
     pip-requirements
-    py-autopep8
-    py-yapf
     python-mode
     ))
 
@@ -49,12 +47,5 @@
 
 (defun python-personal/init-pip-requirements ()
   (use-package pip-requirements))
-
-(defun python-personal/init-py-autopep8 ()
-  (use-package py-autopep8))
-
-(defun python-personal/init-py-yapf ()
-  (use-package py-yapf))
-
 
 ;;; packages.el ends here
