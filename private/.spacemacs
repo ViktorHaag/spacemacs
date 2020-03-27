@@ -44,7 +44,9 @@ This function should only modify configuration layer settings."
      git
      helm
      html
-     javascript
+     (javascript :variables
+                 js-switch-indent-offset 4
+      )
      ibuffer-personal
      ivy
      ;; lsp
