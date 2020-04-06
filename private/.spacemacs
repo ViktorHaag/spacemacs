@@ -518,6 +518,10 @@ before packages are loaded."
   ;;; Text mode
   (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
+  ;;; Web mode
+  (setq web-mode-content-types-alist
+        '(("json" . "\\.handlebars\\'")))
+
   ;;; editorconfig on by default
   (editorconfig-mode t)
 
