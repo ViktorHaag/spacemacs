@@ -66,7 +66,9 @@ This function should only modify configuration layer settings."
      ;;        shell-default-position 'bottom)
      ;; spell-checking
      syntax-checking
-     treemacs
+     (treemacs :variables
+               treemacs-use-icons-dired nil
+               )
      ;; version-control
      yaml
      )
