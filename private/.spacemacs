@@ -226,11 +226,12 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-colorize-cursor-according-to-state t
 
    ;; Default font or prioritized list of fonts.
-   dotspacemacs-default-font '("Cascadia Code"
+   dotspacemacs-default-font '("Cascadia Code PL"
                                :size 11
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
+
 
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
@@ -501,6 +502,9 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+
+  ;;; ligatures
+  (mac-auto-operator-composition-mode)
 
   ;;; CSS mode
   ;; Add .css_t as a CSS recognized suffix to account for Sphinx doc project conventions
