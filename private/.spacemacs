@@ -531,6 +531,9 @@ before packages are loaded."
   ;;; editorconfig on by default
   (editorconfig-mode t)
 
+  ;;; current line highlighting off
+  (spacemacs/toggle-highlight-current-line-globally-off)
+
   ;;; misc Emacs settings
   (setq-default c-basic-offset 4)
   (setq-default tab-width 4)
