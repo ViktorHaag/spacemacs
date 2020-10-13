@@ -66,6 +66,7 @@ This function should only modify configuration layer settings."
      ;;        shell-default-position 'bottom)
      ;; spell-checking
      syntax-checking
+     theming
      (treemacs :variables
                treemacs-use-icons-dired nil
                )
@@ -479,6 +480,13 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
           ("melpa" . "melpa.org/packages/")
           ("org" . "orgmode.org/elpa/")
           ("gnu" . "elpa.gnu.org/packages/")))
+
+  (setq theming-modifications '(
+                                ;; requires the theming layer
+                                (tango-plus
+                                 (table-cell :background "#eeeeec" :foreground "#000000")
+                                 )
+                                ))
 
   ;; explicitly set gls for instert-directory-program, to get the
   ;; formatting switches we want
