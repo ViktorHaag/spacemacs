@@ -53,7 +53,10 @@ This function should only modify configuration layer settings."
      local-functions ;; personal
      markdown
      multiple-cursors
-     ;; org
+     (org :variables
+          org-enable-github-support t
+          org-enable-org-journal-support t
+          )
      (osx :variables
           osx-command-as 'meta
           osx-option-as 'super
@@ -459,7 +462,7 @@ It should only modify the values of Spacemacs settings."
    ;; Run `spacemacs/prettify-org-buffer' when
    ;; visiting README.org files of Spacemacs.
    ;; (default nil)
-   dotspacemacs-pretty-docs nil))
+   dotspacemacs-pretty-docs t))
 
 (defun dotspacemacs/user-env ()
   "Environment variables setup.
@@ -475,6 +478,11 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+
+  (defconst user-data-directory
+    (expand-file-name (concat user-home-directory "src/"))
+    "Spacemacs default directory for user documents and data.")
+
   (setq configuration-layer-elpa-archives
         '(
           ("melpa" . "melpa.org/packages/")
@@ -528,6 +536,13 @@ before packages are loaded."
     (progn
       (define-key markdown-mode-map (kbd "M-g" 'markdown-demote))
       (define-key markdown-mode-map (kbd "M-l" 'downcase-word))))
+
+  ;; org mode
+  (setq org-agenda-files (list
+                          (expand-file-name (concat user-data-directory "org/agenda"))
+                          ))
+  (setq org-journal-dir (expand-file-name (concat user-data-directory "org/journal/")))
+  (setq org-journal-file-format "%Y-%m-%d")
 
   ;;; Text mode
   (add-hook 'text-mode-hook 'turn-on-auto-fill)
