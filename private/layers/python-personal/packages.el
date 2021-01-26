@@ -15,7 +15,7 @@
 (setq python-personal-packages
   '(
     elpy
-    pip-requirements
+    (pip-decorate :location local)
     python-mode
     ))
 
@@ -45,7 +45,7 @@
       (setq elpy-rpc-timeout 10))
     ))
 
-(defun python-personal/init-pip-requirements ()
-  (use-package pip-requirements))
+(defun python-personal/init-pip-decorate ()
+  (use-package pip-decorate))
 
 ;;; packages.el ends here
