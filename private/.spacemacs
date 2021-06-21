@@ -614,6 +614,8 @@ before packages are loaded."
     (progn
       (define-key markdown-mode-map (kbd "M-g" 'markdown-demote))
       (define-key markdown-mode-map (kbd "M-l" 'downcase-word))))
+  (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+  (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
 
   ;; org mode
   (setq org-agenda-files (list
