@@ -561,12 +561,6 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
     (expand-file-name (concat user-home-directory "src/"))
     "Spacemacs default directory for user documents and data.")
 
-  (setq configuration-layer-elpa-archives
-        '(
-          ("melpa" . "melpa.org/packages/")
-          ("org" . "orgmode.org/elpa/")
-          ("gnu" . "elpa.gnu.org/packages/")))
-
   (setq theming-modifications '(
                                 ;; requires the theming layer
                                 (tango-plus
