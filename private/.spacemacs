@@ -114,6 +114,10 @@ It should only modify the values of Spacemacs settings."
   (setq custom-file
         (expand-file-name (concat spacemacs-start-directory "custom.el")))
   (load custom-file)
+  ;; set package-gnupghome-dir to reside in the cache directory so that
+  ;; its socket files don't end up confusing Dropbox
+  (setq package-gnupghome-dir
+        (expand-file-name (concat spacemacs-cache-directory "package-gnupg")))
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
