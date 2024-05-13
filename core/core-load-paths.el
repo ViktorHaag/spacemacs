@@ -96,7 +96,7 @@
 ;; because Spacemacs may be installed to a shared location and this directory
 ;; and its children should be per-user.
 (defconst spacemacs-cache-directory
-  (concat user-emacs-directory ".cache/")
+  (expand-file-name (concat "~/" "Library/Caches/emacs.spacemacs/"))
   "Spacemacs storage area for persistent files.")
 
 ;; ~/.emacs.d/.cache/auto-save
