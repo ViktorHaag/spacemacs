@@ -102,8 +102,8 @@
 ;; This is based on `user-emacs-directory` so that cache is per-user, even if
 ;; Spacemacs is installed in a shared location.
 (defconst spacemacs-cache-directory
-  (concat user-emacs-directory ".cache/")
-  "Spacemacs storage area for persistent files (per-user cache).")
+  (expand-file-name (concat "~/" "Library/Caches/emacs.spacemacs/"))
+  "Spacemacs storage area for persistent files.")
 
 ;; Directory for auto-save files, inside the cache directory.
 (defconst spacemacs-auto-save-directory
