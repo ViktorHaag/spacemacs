@@ -28,8 +28,9 @@
 (setq denote-date-format nil)
 (setq denote-link-fontify-backlinks t)
 
-;; Markdown by default, so add hook to render link buttons
-(add-hook 'find-file-hook #'denote-link-buttonize-buffer)
+;; Markdown by default, so potentially add hook to render link buttons
+(add-hook 'text-mode-hook #'denote-fontify-links-mode-maybe)
+
 
 ;; useful to see various ways to add a directory to a path:
 ;; (thread-last denote-directory (expand-file-name "subdir"))
