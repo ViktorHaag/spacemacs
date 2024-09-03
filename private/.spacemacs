@@ -400,6 +400,11 @@ It should only modify the values of Spacemacs settings."
    ;; displayed in the current window. (default nil)
    dotspacemacs-switch-to-buffer-prefers-purpose nil
 
+   ;; Whether side windows (such as those created by treemacs or neotree)
+   ;; are kept or minimized by `spacemacs/toggle-maximize-window' (SPC w m).
+   ;; (default t)
+   dotspacemacs-maximize-window-keep-side-windows t
+
    ;; If non-nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
    ;; nil to boost the loading time. (default t)
@@ -521,6 +526,13 @@ It should only modify the values of Spacemacs settings."
    ;; (default '("rg" "ag" "pt" "ack" "grep"))
    dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
 
+   ;; The backend used for undo/redo functionality. Possible values are
+   ;; `undo-fu', `undo-redo' and `undo-tree' see also `evil-undo-system'.
+   ;; Note that saved undo history does not get transferred when changing
+   ;; your undo system. The default is currently `undo-fu' as `undo-tree'
+   ;; is not maintained anymore and `undo-redo' is very basic."
+   dotspacemacs-undo-system 'undo-fu
+
    ;; Format specification for setting the frame title.
    ;; %a - the `abbreviated-file-name', or `buffer-name'
    ;; %t - `projectile-project-name'
@@ -556,6 +568,9 @@ It should only modify the values of Spacemacs settings."
    ;; to aggressively delete empty line and long sequences of whitespace,
    ;; `trailing' to delete only the whitespace at end of lines, `changed' to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
+   ;; The variable `global-spacemacs-whitespace-cleanup-modes' controls
+   ;; which major modes have whitespace cleanup enabled or disabled
+   ;; by default.
    ;; (default nil)
    dotspacemacs-whitespace-cleanup 'trailing
 
