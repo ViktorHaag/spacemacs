@@ -49,7 +49,7 @@ This function should only modify configuration layer settings."
      ibuffer-personal
      (javascript :variables
                  js-switch-indent-offset 4
-      )
+                 )
      ;; ivy
      local-functions ;; personal
      ;; lsp
@@ -71,7 +71,7 @@ This function should only modify configuration layer settings."
              python-format-on-save t
              python-lsp-server 'pyright
              python-shell-interpreter "~/.pyenv/shims/ipython3"
-      )
+             )
      ;; python-personal
      restructuredtext
      ;; (shell :variables
@@ -614,7 +614,7 @@ default it calls `spacemacs/load-spacemacs-env' which loads the environment
 variables declared in `~/.spacemacs.env' or `~/.spacemacs.d/.spacemacs.env'.
 See the header of this file for more information."
   (spacemacs/load-spacemacs-env)
-)
+  )
 
 (defun dotspacemacs/user-init ()
   "Initialization for user code:
@@ -646,7 +646,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
 This function is called only while dumping Spacemacs configuration. You can
 `require' or `load' the libraries of your choice that will be included in the
 dump."
-)
+  )
 
 
 (defun dotspacemacs/user-config ()
@@ -657,7 +657,8 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   ;;; ligatures
-  (mac-auto-operator-composition-mode)
+  (if (fboundp 'mac-auto-operator-composition-mode)
+      (mac-auto-operator-composition-mode))
 
   ;;; CSS mode
   ;; Add .css_t as a CSS recognized suffix to account for Sphinx doc project conventions
@@ -705,7 +706,6 @@ before packages are loaded."
   (setq-default track-eol t)
 
   ;; keybindings
-  (global-set-key (kbd "C-x C-b") 'ibuffer)
   (global-set-key [home] 'beginning-of-buffer)
   (global-set-key [end] 'end-of-buffer)
 

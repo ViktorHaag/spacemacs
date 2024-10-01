@@ -14,9 +14,9 @@
 
 ;; ibuffer package loaded by implication via layers.el
 (setq ibuffer-personal-packages
-  '(
-    ibuffer
-    ))
+      '(
+        ibuffer
+        ))
 
 (defun ibuffer-personal/init-ibuffer ()
   (use-package ibuffer
@@ -25,7 +25,7 @@
     :init
     (progn
       (spacemacs/set-leader-keys "bB" 'ibuffer)
-      (global-set-key (kbd "C-x C-b") 'buffer)
+      (global-set-key (kbd "C-x C-b") 'ibuffer)
       (evil-ex-define-cmd "buffers" 'ibuffer)
       )
     :config
@@ -40,7 +40,7 @@
            (:description "filename"
                          :reader (read-from-minibuffer "Filter by file/directory name (regexp):"))
            (when-let ((it (or (buffer-local-value 'buffer-file-name buf)
-                               (buffer-local-value 'dired-directory buf))))
+                              (buffer-local-value 'dired-directory buf))))
              (string-match-qualifier it))
            ))
       (eval-after-load "ibuf-ext"
