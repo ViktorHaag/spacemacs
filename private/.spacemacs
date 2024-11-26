@@ -52,7 +52,7 @@ This function should only modify configuration layer settings."
                  )
      ;; ivy
      local-functions ;; personal
-     ;; lsp
+     lsp
      markdown
      multiple-cursors
      (org :variables
