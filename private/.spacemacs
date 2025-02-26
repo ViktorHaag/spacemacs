@@ -291,7 +291,7 @@ It should only modify the values of Spacemacs settings."
    ;; package can be defined with `:package', or a theme can be defined with
    ;; `:location' to download the theme package, refer the themes section in
    ;; DOCUMENTATION.org for the full theme specifications.
-   dotspacemacs-themes '(tango-plus)
+   dotspacemacs-themes '(modus-operandi)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
@@ -646,7 +646,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
 
   (setq theming-modifications '(
                                 ;; requires the theming layer
-                                (tango-plus
+                                (modus-operandi
                                  (table-cell :background "#eeeeec" :foreground "#000000")
                                  )
                                 ))
