@@ -85,6 +85,9 @@ This function should only modify configuration layer settings."
      (treemacs :variables
                treemacs-use-icons-dired nil
                )
+     (unicode-fonts :variables
+                    unicode-fonts-enable-ligatures t
+                    )
      ;; version-control
      yaml
      )
@@ -670,7 +673,7 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
-  ;;; ligatures
+  ;;; ligatures if running under railwaycat emacs-plus
   (if (fboundp 'mac-auto-operator-composition-mode)
       (mac-auto-operator-composition-mode))
 
