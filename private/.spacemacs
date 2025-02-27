@@ -315,7 +315,7 @@ It should only modify the values of Spacemacs settings."
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("Cascadia Code PL"
                                :size 11.0
-                               :weight normal
+                               :weight semi-light
                                :width normal)
 
 
