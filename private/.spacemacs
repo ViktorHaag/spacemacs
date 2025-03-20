@@ -676,6 +676,35 @@ before packages are loaded."
   ;;; ligatures if running under railwaycat emacs-plus
   (if (fboundp 'mac-auto-operator-composition-mode)
       (mac-auto-operator-composition-mode))
+  (setq ligature-composition-table nil)
+  (ligature-set-ligatures 'prog-mode
+                          '(("=" (rx (+ (or ">" "<" "|" "/" "~" ":" "!" "="))))
+                            (";" (rx (+ ";")))
+                            ("&" (rx (+ "&")))
+                            ("!" (rx (+ (or "=" "!" "\." ":" "~"))))
+                            ("?" (rx (or ":" "=" "\." (+ "?"))))
+                            ("%" (rx (+ "%")))
+                            ("|" (rx (+ (or ">" "<" "|" "/" ":" "!" "}" "\]"
+                                            "-" "=" ))))
+                            ("\\" (rx (or "/" (+ "\\"))))
+                            ("+" (rx (or ">" (+ "+"))))
+                            (":" (rx (or ">" "<" "=" "//" ":=" (+ ":"))))
+                            ("/" (rx (+ (or ">"  "<" "|" "/" "\\" "\*" ":" "!"
+                                            "="))))
+                            ("\." (rx (or "=" "-" "\?" "\.=" "\.<" (+ "\."))))
+                            ("-" (rx (+ (or ">" "<" "|" "~" "-"))))
+                            ("*" (rx (or ">" "/" ")" (+ "*"))))
+                            ("w" (rx (+ "w")))
+                            ("<" (rx (+ (or "\+" "\*" "\$" "<" ">" ":" "~"  "!"
+                                            "-"  "/" "|" "="))))
+                            (">" (rx (+ (or ">" "<" "|" "/" ":" "=" "-"))))
+                            ("#" (rx (or ":" "=" "!" "(" "\?" "\[" "{" "_(" "_"
+                                         (+ "#"))))
+                            ("~" (rx (or ">" "=" "-" "@" "~>" (+ "~"))))
+                            ("_" (rx (+ (or "_" "|"))))
+                            ("0" (rx (and "x" (+ (in "A-F" "a-f" "0-9")))))
+                            "Fl"  "Tl"  "ff" "ffi" "fi"  "fj"  "fl"  "ft" "www"
+                            "{|"  "[|"  "]#"  "(*"  "}#"  "$>"  "^="))
 
   ;;; CSS mode
   ;; Add .css_t as a CSS recognized suffix to account for Sphinx doc project conventions
