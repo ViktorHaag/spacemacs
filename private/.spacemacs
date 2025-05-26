@@ -41,7 +41,19 @@ This function should only modify configuration layer settings."
      auto-completion
      ;; better-defaults
      compleseus
-     denote-personal
+     (denote :variables
+             denote-directory (expand-file-name "~/Dropbox/Stuff/notes")
+             denote-known-keywords '("rpg", "work")
+             denote-file-type "markdown-toml"
+             denote-infer-keywords t
+             denote-sort-keywords t
+             denote-prompts '(title keywords)
+             denote-date-prompt-use-org-read-date t
+             denote-allow-multi-word-keywords nil
+             denote-date-format nil
+             denote-link-fontify-backlinks t
+             denote-dired-directories (list denote-directory)
+             )
      emacs-lisp
      git
      ;; helm
@@ -671,6 +683,11 @@ before packages are loaded."
   ;;; CSS mode
   ;; Add .css_t as a CSS recognized suffix to account for Sphinx doc project conventions
   (add-to-list 'auto-mode-alist '("\\.css_t$" . css-mode))
+
+  ;; Denote mode
+  (add-hook 'text-mode-hook #'denote-fontify-links-mode-maybe)
+  (add-hook 'dired-mode-hook #'denote-dired-mode-in-directories)
+
 
   ;; JSON mode
   (add-to-list 'auto-mode-alist '("\\.jsonld\\." . json-mode))
