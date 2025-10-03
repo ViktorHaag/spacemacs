@@ -62,6 +62,10 @@ This function should only modify configuration layer settings."
      (javascript :variables
                  js-switch-indent-offset 4
                  )
+     (json :variables
+           json-fmt-tool 'prettier
+           json-fmt-on-save t
+           )
      ;; ivy
      local-functions ;; personal
      lsp
