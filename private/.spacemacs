@@ -635,13 +635,6 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
     (expand-file-name (concat "~/" "src/"))
     "Spacemacs default directory for user documents and data.")
 
-  (setq theming-modifications '(
-                                ;; requires the theming layer
-                                (modus-operandi
-                                 (table-cell :background "#eeeeec" :foreground "#000000")
-                                 )
-                                ))
-
   ;; If using osx layer and gls, set the formatting switches we want
   (when (spacemacs/system-is-mac)
     (let ((gls (executable-find "gls")))
@@ -721,6 +714,14 @@ before packages are loaded."
 
   ;;; Text mode
   (add-hook 'text-mode-hook 'turn-on-auto-fill)
+
+  ;;; Theming
+  (setq theming-modifications '(
+                                ;; requires the theming layer
+                                (modus-operandi
+                                 (table-cell :background "#eeeeec" :foreground "#000000")
+                                 )
+                                ))
 
   ;;; Undo-tree mode
   (setq undo-tree-auto-save-history nil)
