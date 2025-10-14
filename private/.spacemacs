@@ -55,7 +55,11 @@ This function should only modify configuration layer settings."
              denote-dired-directories (list denote-directory)
              )
      emacs-lisp
-     git
+     (git :variables
+          magit-diff-paint-whitespace 'status
+          magit-diff-paint-whitespace-lines 'all
+          magit-diff-highlight-trailing t
+          )
      ;; helm
      html
      ibuffer-personal
