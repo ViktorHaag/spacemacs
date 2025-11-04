@@ -98,7 +98,7 @@ This function should only modify configuration layer settings."
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      spacemacs-editing
-     ;; spell-checking
+     spell-checking
      syntax-checking
      tern
      theming
