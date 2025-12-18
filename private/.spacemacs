@@ -702,6 +702,9 @@ before packages are loaded."
   ;; JSON mode
   (add-to-list 'auto-mode-alist '("\\.jsonld\\." . json-mode))
 
+  ;; lsp-pyright to use basedpyright
+  (setq lsp-pyright-langserver-command "basedpyright")
+
   ;; Markdown mode
   ;; markdown layer stomps M-l, so put it back, and reassign markdown-demote to M-g as unused
   (spacemacs|use-package-add-hook markdown
