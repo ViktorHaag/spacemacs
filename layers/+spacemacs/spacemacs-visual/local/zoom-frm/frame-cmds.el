@@ -1,4 +1,4 @@
-;;; frame-cmds.el --- Frame and window commands (interactive functions).
+;;; frame-cmds.el --- Frame and window commands (interactive functions).  -*- lexical-binding: t; -*-
 ;;
 ;; Filename: frame-cmds.el
 ;; Description: Frame and window commands (interactive functions).
@@ -160,7 +160,7 @@
 ;;
 ;;    `font-too-small', `font-size'.
 ;;
-;;  
+;;
 ;;  ***** NOTE: The following EMACS PRIMITIVE has been ADVISED HERE:
 ;;
 ;;  `delete-window' - If only one window in frame, `delete-frame'.
@@ -374,7 +374,7 @@
 ;;              tile-frames                    to frcmds-tile-frames.
 ;;     rename-non-minibuffer-frame: Pass OLD-NAME and NEW-NAME to rename-frame.
 ;;     Group Frame-Commands: Added :prefix frcmds-.
-;;     
+;;
 ;; 2014/02/24 dadams
 ;;     rename-frame, rename-non-minibuffer-frame: Fixed default buffer name for non-interactive.
 ;; 2013/09/21 dadams
@@ -608,7 +608,7 @@
 
 (eval-when-compile (require 'cl)) ;; case, incf (plus, for Emacs 20: dolist, dotimes)
 (require 'frame-fns) ;; frame-geom-value-cons, frame-geom-value-numeric, frames-on, get-frame-name,
-                     ;; get-a-frame, read-frame
+;; get-a-frame, read-frame
 (require 'strings nil t) ;; (no error if not found) read-buffer
 (require 'misc-fns nil t) ;; (no error if not found) another-buffer
 
@@ -637,28 +637,28 @@
   :group 'frames
   :prefix "frcmds-"
   :link `(url-link :tag "Send Bug Report"
-          ,(format (concat "mailto:" "drew" "0000" "0001" "@gm" "ail" ".com?subject=\
+                   ,(format (concat "mailto:" "drew" "0000" "0001" "@gm" "ail" ".com?subject=\
 frame-cmds.el bug: \
 &body=Describe bug below, using a precise recipe that starts with `emacs -Q' or `emacs -q'.  \
 Be sure to mention the `Update #' from the file header.\
 %%0A%%0AEmacs version: %s")
-          (emacs-version)))
+                            (emacs-version)))
   :link '(url-link :tag "Other Libraries by Drew"
-          "https://www.emacswiki.org/emacs/DrewsElispLibraries")
+                   "https://www.emacswiki.org/emacs/DrewsElispLibraries")
   :link '(url-link :tag "Download"
-          "https://www.emacswiki.org/emacs/download/frame-cmds.el")
+                   "https://www.emacswiki.org/emacs/download/frame-cmds.el")
   :link '(url-link :tag "Description - `delete-window'"
-          "https://www.emacswiki.org/emacs/FrameModes")
+                   "https://www.emacswiki.org/emacs/FrameModes")
   :link '(url-link :tag "Description - Frame Renaming"
-          "https://www.emacswiki.org/emacs/FrameTitle")
+                   "https://www.emacswiki.org/emacs/FrameTitle")
   :link '(url-link :tag "Description - Frame Resizing"
-          "https://www.emacswiki.org/emacs/Shrink-Wrapping_Frames")
+                   "https://www.emacswiki.org/emacs/Shrink-Wrapping_Frames")
   :link '(url-link :tag "Description - Frame Customization"
-          "https://www.emacswiki.org/emacs/CustomizingAndSaving")
+                   "https://www.emacswiki.org/emacs/CustomizingAndSaving")
   :link '(url-link :tag "Description - Frame Tiling"
-          "https://www.emacswiki.org/emacs/Frame_Tiling_Commands")
+                   "https://www.emacswiki.org/emacs/Frame_Tiling_Commands")
   :link '(url-link :tag "Description - General"
-          "https://www.emacswiki.org/emacs/FrameModes")
+                   "https://www.emacswiki.org/emacs/FrameModes")
   :link '(emacs-commentary-link :tag "Commentary" "frame-cmds"))
 
 (defcustom clone-frame-parameters (cons 30 30)
@@ -736,10 +736,10 @@ give good results in most cases."
   :type '(choice
           (const :tag "Calculate automatically" nil)
           (list :tag "List of (x0 y0 x1 y1)"
-           (integer :tag "X0 (upper left) - pixels from screen left")
-           (integer :tag "Y0 (upper left) - pixels from screen top")
-           (integer :tag "X1 (lower right) - pixels from screen left" )
-           (integer :tag "Y1 (lower right) - pixels from screen top")))
+                (integer :tag "X0 (upper left) - pixels from screen left")
+                (integer :tag "Y0 (upper left) - pixels from screen top")
+                (integer :tag "X1 (lower right) - pixels from screen left" )
+                (integer :tag "Y1 (lower right) - pixels from screen top")))
   :group 'Frame-Commands)
 
 
@@ -1478,7 +1478,7 @@ With a prefix arg, create that many new frames.
 The same character size is used for the new frames."
   (interactive "p")
   (frcmds-split-frame-1 'horizontal num))
-  
+
 ;;;###autoload
 (defun split-frame-vertically (num)
   "Vertically split the selected frame.
@@ -1660,7 +1660,7 @@ This represents the currently available screen area."
           ;; Punt.  Assume only one monitor.
           (list 0 0 (x-display-pixel-width) (x-display-pixel-height))))))
 
-; Emacs 20 doesn't have `butlast'.  Define it to avoid requiring `cl.el' at runtime.  From `subr.el'.
+                                        ; Emacs 20 doesn't have `butlast'.  Define it to avoid requiring `cl.el' at runtime.  From `subr.el'.
 (unless (fboundp 'butlast)
   (defun nbutlast (list &optional n)
     "Modifies LIST to remove the last N elements."
@@ -2097,9 +2097,9 @@ The CAR of each list item is a string variable name.
 The CDR is nil."
   (let ((vars  ()))
     (mapatoms (lambda (sym) (and (boundp sym)
-                            (setq sym  (symbol-name sym))
-                            (string-match "frame-alist$" sym)
-                            (push (list sym) vars))))
+                                 (setq sym  (symbol-name sym))
+                                 (string-match "frame-alist$" sym)
+                                 (push (list sym) vars))))
     vars))
 
 (defun frcmds-frame-parameter-names ()

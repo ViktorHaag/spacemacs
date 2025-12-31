@@ -1,4 +1,4 @@
-;;; frame-fns.el --- Non-interactive frame and window functions.
+;;; frame-fns.el --- Non-interactive frame and window functions.  -*- lexical-binding: t; -*-
 ;;
 ;; Filename: frame-fns.el
 ;; Description: Non-interactive frame and window functions.
@@ -83,7 +83,7 @@
 ;;; Code:
 
 (eval-when-compile (when (< emacs-major-version 21) (require 'cl)))
- ;; dolist, push
+;; dolist, push
 (require 'avoid nil t) ;; mouse-avoidance-point-position
 
 ;;;;;;;;;;;;;;;;;;;;;;;
