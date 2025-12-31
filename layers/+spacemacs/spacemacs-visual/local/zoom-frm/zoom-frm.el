@@ -1,4 +1,4 @@
-;;; zoom-frm.el --- Commands to zoom frame font size.
+;;; zoom-frm.el --- Commands to zoom frame font size.  -*- lexical-binding: t; -*-
 ;;
 ;; Filename: zoom-frm.el
 ;; Description: Commands to zoom frame font size.
@@ -124,7 +124,7 @@
 ;;                      [C-M-mouse-wheel])  ; Emacs 20, 21
 ;;                    'zoom-all-frames-in)
 ;;    (when (boundp 'mouse-wheel-up-event) ; Emacs 22+
-;;      (global-set-key (vector (list 'control 
+;;      (global-set-key (vector (list 'control
 ;;                                    mouse-wheel-up-event))
 ;;                      'zoom-out)
 ;;      (global-set-key (vector (list 'control 'meta
@@ -249,18 +249,18 @@
   "Zoom a frame or buffer."
   :group 'frames :group 'Frame-Commands ; Defined in `frame-cmds.el'.
   :link `(url-link :tag "Send Bug Report"
-          ,(format (concat "mailto:" "drew" "0000" "0001" "@gm" "ail" ".com?subject=\
+                   ,(format (concat "mailto:" "drew" "0000" "0001" "@gm" "ail" ".com?subject=\
 zoom-frm.el bug: \
 &body=Describe bug below, using a precise recipe that starts with `emacs -Q' or `emacs -q'.  \
 Be sure to mention the `Update #' from the file header.\
 %%0A%%0AEmacs version: %s")
-          (emacs-version)))
+                            (emacs-version)))
   :link '(url-link :tag "Other Libraries by Drew"
-          "https://www.emacswiki.org/emacs/DrewsElispLibraries")
+                   "https://www.emacswiki.org/emacs/DrewsElispLibraries")
   :link '(url-link :tag "Download"
-          "https://www.emacswiki.org/emacs/download/zoom-frm.el")
+                   "https://www.emacswiki.org/emacs/download/zoom-frm.el")
   :link '(url-link :tag "Description"
-          "https://www.emacswiki.org/emacs/SetFonts#ChangingFontSize")
+                   "https://www.emacswiki.org/emacs/SetFonts#ChangingFontSize")
   :link '(emacs-commentary-link :tag "Commentary" "zoom-frm"))
 
 ;;;###autoload
@@ -407,7 +407,7 @@ Remember that you can also use `C-u' when you are done zooming."
         (setq zoom-frame/buffer  (if (eq zoom-frame/buffer 'frame) 'buffer 'frame)
               arg                1)
         (message "%s zooming from now on" (upcase (symbol-name zoom-frame/buffer)))
-        (sit-for 1))    
+        (sit-for 1))
       (let* ((ev               last-command-event)
              (echo-keystrokes  nil)
              (base             (event-basic-type ev))
@@ -442,7 +442,7 @@ Remember that you can also use `C-u' when you are done zooming."
                      (dolist (mods  '(() (control)))
                        (dolist (key  '(?- ?+ ?= ?0)) ; The `=' key is often unshifted `+' key.
                          (define-key map (vector (append mods (list key)))
-                           `(lambda () (interactive) (zoom-in/out ',arg)))))
+                                     `(lambda () (interactive) (zoom-in/out ',arg)))))
                      (define-key map "\C-u" `(lambda () (interactive) (zoom-in/out ',arg)))
                      map)))))
     )
