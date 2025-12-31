@@ -1,4 +1,4 @@
-;;; packages.el --- python-personal layer packages file for Spacemacs.
+;;; packages.el --- python-personal layer packages file for Spacemacs.  -*- lexical-binding: t; -*-
 ;;
 ;; Copyright (c) 2012-2019 Sylvain Benner & Contributors
 ;;
@@ -13,11 +13,11 @@
 ;;; Code:
 
 (setq python-personal-packages
-  '(
-    elpy
-    (pip-decorate :location local)
-    python-mode
-    ))
+      '(
+        elpy
+        (pip-decorate :location local)
+        python-mode
+        ))
 
 (defun python-personal/init-python-mode ()
   (use-package python-mode
@@ -27,7 +27,7 @@
     (progn
       (setq py-shell-name "python3")
       (setq python-shell-interpreter (expand-file-name "~/.pyenv/shims/python3" ))
-    )))
+      )))
 
 
 (defun python-personal/init-elpy ()
