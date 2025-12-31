@@ -1,4 +1,4 @@
-;;; funcs.el --- local-functions layer functions file for Spacemacs.
+;;; funcs.el --- local-functions layer functions file for Spacemacs.  -*- lexical-binding: t; -*-
 ;;
 ;; Copyright (c) 2012-2019 Sylvain Benner & Contributors
 ;;
