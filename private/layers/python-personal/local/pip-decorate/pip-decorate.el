@@ -1,4 +1,4 @@
-;;; pip-decorate.el --- A major mode for decorating pip requirements files.
+;;; pip-decorate.el --- A major mode for decorating pip requirements files.  -*- lexical-binding: t; -*-
 
 ;; Derived from pip-requirements.el by Wilfred Hughes
 ;; url --> https://github.com/Wilfred/pip-requirements.el
