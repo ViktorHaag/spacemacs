@@ -1,4 +1,4 @@
-;;; core-spacemacs-ftest.el --- Spacemacs Functional Test File
+;;; core-spacemacs-ftest.el --- Spacemacs Functional Test File  -*- lexical-binding: t; -*-
 ;;
 ;; Copyright (c) 2012-2025 Sylvain Benner & Contributors
 ;;
@@ -29,5 +29,5 @@
                     ((:input '(1) :output 1)))
                (bar (n m)
                     ((:input '(2 2) :output 2))))
-    (should (equal (foo 1) 1))
-    (should (equal (bar 2 2) 2))))
+              (should (equal (foo 1) 1))
+              (should (equal (bar 2 2) 2))))
