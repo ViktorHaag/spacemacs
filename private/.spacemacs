@@ -157,6 +157,11 @@ It should only modify the values of Spacemacs settings."
   (setq package-gnupghome-dir
         (expand-file-name (concat spacemacs-cache-directory "package-gnupg")))
 
+  ;; set projectile-frecency-file to reside in the cache directory so that
+  ;; it doesn't put it into the .config directory
+  (setq projectile-frecency-file
+        (expand-file-name (concat spacemacs-cache-directory "projectile-frecency.eld")))
+
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
